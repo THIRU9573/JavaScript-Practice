@@ -1,0 +1,43 @@
+.heading {
+    font-family: roboto;
+    font-weight: bold;
+    font-size: 45px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.button {
+    font-family: roboto;
+    font-size: 15px;
+    height: 10vh;
+    width: 15vw;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: black;
+
+}
+
+.bg {
+    background-color: black;
+    margin-top: 10px;
+    padding-top: 15px;
+    padding-bottom: 1px;
+}
+.background-heading{
+    text-align: center;
+    font-family: roboto;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 6px;
+}
+.span{
+    color: #49a6e9;
+}
+.description {
+    font-family: roboto;
+    font-size: 18px;
+    text-align: center;
+    color: black;
+    margin-top: 6px;
+}
