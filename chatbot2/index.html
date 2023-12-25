@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/d80058540b.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    </head>
+    <body>
+        <div id="sectionFavouriteplaces">
+            <div class="favouriteplacebg-container">
+              <div class="header-container">
+                        <h1 class="head-box">WELL COME TO INDIA</h1>
+                        <div class="nav-container">
+                            <ul>
+                                <li><a href="#sectionHome" onclick="display('sectionHome')">Home</a></li>
+                                <li>
+                                    <a href="#">Locations </a>
+                                    <ul class="dropdown">
+                                        <li><a href="#sectionTajmahaldetailedview"  onclick="display('sectionTajmahaldetailedview')">Tajmahal</a></li>
+                                        <li><a href="#sectionKeraladetailedview" onclick="display('sectionKeraladetailedview')">Kerala</a></li>
+                                        <li><a href="#sectionKashmirDetailedView" onclick="display('sectionKashmirDetailedView')">Kashmir</a></li>
+                                        <li><a href="#sectionVaranasiDetailedview" onclick="display('sectionVaranasiDetailedview')">Uttarpradesh</a></li>
+                                        <span></span>
+                                    </ul>
+                                </li>
+                                <span id="bot-icon" onclick="chatPopup()">
+                                  <i class="fa-brands fa-square-reddit"></i>
+                                </span>                            
+                            </ul>
+                        </div>
+              </div>
+              <div class="favouriteplace-card-container d-flex flex-row" onclick="display('sectionTajmahaldetailedview')">
+                          <div>
+                              <h1 class="favoriteplace-card-heading">Taj mahal</h1>
+                              <p>
+                                  The Taj Mahal is a magnificent white marble mausoleum located in Agra, 
+                                  India, built by the Mughal emperor Shah Jahan in memory of his beloved wife Mumtaz Mahal.
+                                  It is considered one of the most iconic and beautiful architectural wonders in the world, 
+                                  known for its intricate design and rich history.
+                              </p>
+                          </div>
+                          <img src="https://img.freepik.com/free-photo/mesmerizing-shot-famous-historic-taj-mahal-agra-india_181624-16028.jpg?size=626&ext=jpg&uid=R116989314&ga=GA1.2.2084330140.1695034425&semt=ais" class="favoriteplace-card-image"/>
+              </div>
+              <div class="favouriteplace-card-container d-flex flex-row" onclick="display('sectionKeraladetailedview')">
+                          <div>
+                              <h1 class="favoriteplace-card-heading">Kerala</h1>
+                              <p>
+                                  Kerala, a southwestern state in India, is renowned for its lush green landscapes,
+                                  tranquil backwaters, and vibrant culture. Often referred to as "God's Own Country,
+                                  " Kerala attracts tourists with its stunning natural beauty and diverse traditions.
+                              </p>
+                          </div>
+                          <img src="https://www.ekeralatourism.net/wp-content/uploads/2018/03/Kumarakom.jpg" class="favoriteplace-card-image"/>
+              </div>
+              <div class="favouriteplace-card-container d-flex flex-row" onclick="display('sectionKashmirDetailedView')">
+                          <div>
+                              <h1 class="favoriteplace-card-heading">Kashmir</h1>
+                              <p>
+                                  Kashmir, often called "Paradise on Earth," boasts breathtaking natural beauty with
+                                  serene lakes like Dal Lake and pristine valleys such as Gulmarg. Its snow-capped mountains, 
+                                  like those in Sonmarg, make it a captivating destination for travelers seeking scenic wonders.
+                              </p>
+                          </div>
+                          <img src="https://img.freepik.com/free-photo/beautiful-shot-small-village-surrounded-by-lake-snowy-hills_181624-37802.jpg?size=626&ext=jpg&uid=R116989314&ga=GA1.2.2084330140.1695034425&semt=sph" class="favoriteplace-card-image"/>
+              </div>
+              <div class="favouriteplace-card-container d-flex flex-row" onclick="display('sectionVaranasiDetailedview')">
+                          <div>
+                              <h1 class="favoriteplace-card-heading">Uttarpradesh</h1>
+                              <p>
+                                  Varanasi, one of the world's oldest continuously inhabited cities, is a spiritual hub on 
+                                  the banks of the Ganges River, known for its ancient temples and vibrant ghats. 
+                                  It is a place of pilgrimage, cultural richness, and deep spiritual significance in India.
+                              </p>
+                          </div>
+                          <img src="https://img.freepik.com/free-photo/ancient-ruins-angkor-majestic-spirituality-praying-generated-by-ai_188544-35475.jpg?t=st=1695225235~exp=1695228835~hmac=ec44db5c33acce2fc3b8990f8fa4cb858f6102d2752a11a2ec5915736c1c8796&w=1060" class="favoriteplace-card-image"/>
+              </div>
+              <button class="btn btn-primary" onclick="display('sectionHome')">back</button>
+            </div>
+          </div>
+        <div class="bot-popup" id="chatbot">
+            <span id="cross-mark" onclick="closeChatPopup()">
+            <i class="fa-solid fa-xmark"></i>
+            </span>
+            <iframe src='https://webchat.botframework.com/embed/magicbushyd-bot?s=amgl52NgmCU.2niMj19_Ild6umyTT4xLLbYiHLV1RpAKcEr9nurhzG0'  style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>
+          </div>
+          <script>
+            let botPopup = document.getElementById("chatbot");
+    
+            function chatPopup(){
+              botPopup,classList.add('chat-popup');
+            }
+    
+            function closeChatPopup(){
+              botPopup,classList.remove('chat-popup');
+            }
+    
+          </script>
+          <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+    </body>
+    </html>

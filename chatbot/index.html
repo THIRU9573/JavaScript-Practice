@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeekBot App</title>
+  <style>
+    /* Add your CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    #chat-container {
+      max-width: 400px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    #chat-messages {
+      padding: 10px;
+      height: 300px;
+      overflow-y: auto;
+      background-color: #fff;
+    }
+
+    #user-input {
+      display: flex;
+      padding: 10px;
+      background-color: #eee;
+    }
+
+    #user-input input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    #send-button {
+      margin-left: 10px;
+      padding: 8px 12px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-container">
+    <div id="chat-messages"></div>
+    <div id="user-input">
+        <i class="far fa-message-bot"></i>
+        <iframe id="chatbot-iframe" src='https://webchat.botframework.com/embed/cha12-bot?s=YCj4wdXjOeM.v3Or8-u7LF3pnCPPy0W905FjoDKWPtE9mBxaCxUpSSE' style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>
+    </div>
+  </div>
+
+  
+</body>
+</html>
