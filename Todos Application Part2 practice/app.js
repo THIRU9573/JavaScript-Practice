@@ -1,36 +1,33 @@
 
 let todoItemsContainer = document.getElementById("todoItemsContainer");
 let addTodoButton = document.getElementById("addTodoButton");
+let saveButton = document.getElementById("saveButton");
 
-let todoList = [
-    {
-        text: "Learn HTML",
-        uniqueNo: 1
-    },
-    {
-        text: "Learn CSS",
-        uniqueNo: 2
-    },
-    {
-        text: "Learn JavaScript",
-        uniqueNo: 3
-    },
-    {
-        text: "Learn ReactJs",
-        uniqueNo: 4
-    },
-    {
-        text: "Learn NodeJs",
-        uniqueNo: 5
+function getTodoListFromLocalStorage () {
+    let stringifiedTodoList = localStorage.getItem("todoList");
+    let parsedTodoList = JSON.parse(stringifiedTodoList);
+
+    if (parsedTodoList === null){
+        return [];
     }
+    else {
+        return parsedTodoList;
+    }
+}
 
-];
-
-
+let todoList = getTodoListFromLocalStorage();
 let todoCount = todoList.length;
 
 
-function onTodoStatusChange(checkboxId, labelId){
+
+saveButton.onclick = function() {
+    localStorage.setItem("todoList", JSON.stringify(todoList))
+}
+
+
+
+
+function onTodoStatusChange(checkboxId, labelId, todoId){
     let checkboxElement = document.getElementById(checkboxId);
     console.log(checkboxElement.checked);
 
@@ -46,12 +43,43 @@ function onTodoStatusChange(checkboxId, labelId){
    //method 2:
    labelElmenent.classList.toggle('checked'); 
 
+   let todoObjectIndex = todoList.findIndex(function (eachTodo){
+    let eachTodoId = "todo" +eachTodo.uniqueNo;
+
+    if (eachTodoId === todoId){
+        return true;
+    }
+    else {
+        return false;
+    }
+   });
+
+   let todoObject = todoList[todoObjectIndex];
+   if (todoObject === true){
+    todoObject.isChecked = false;
+   }
+   else{
+    todoObject.isChecked = true;
+   }
+
 
 }
 
 function onDeleteTodo(todoId){
     let todoElement = document.getElementById(todoId);
     todoItemsContainer.removeChild(todoElement);
+
+    //getting Todo item index
+    let deleteElementIndex = todoList.findIndex(function (eachTodo){
+        let eachTodoId = "todo" + eachTodo.uniqueNo;
+        if (eachTodoId === todoId) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    });
+    todoList.splice(deleteElementIndex,1);
 }
 
 
@@ -73,9 +101,11 @@ function creatingAndAppendTodo(todo){
     inputElement.type = 'checkbox';
     //inputElement.id = 'checkboxInput';
     inputElement.id = checkboxId;
+    inputElement.checked = todo.isChecked;
     inputElement.classList.add('checkbox-input');
+
     inputElement.onclick = function () {
-        onTodoStatusChange(checkboxId, labelId);
+        onTodoStatusChange(checkboxId, labelId, todoId);
     }
     todoElement.appendChild(inputElement);
 
@@ -92,6 +122,9 @@ function creatingAndAppendTodo(todo){
     labelElement.id = labelId;
     labelElement.classList.add('checkbox-label');
     labelElement.textContent = todo.text;
+    if (todo.isChecked === true){
+        labelElement.classList.add("checked");
+    }
 
     labelContainer.appendChild(labelElement);
 
@@ -127,8 +160,11 @@ function onAddTodo(){
 
     let newTodo  = {
         text: userInputValue,
-        uniqueNo: todoCount
+        uniqueNo: todoCount,
+        isChecked: false
     };
+
+    todoList.push(newTodo);
 
     creatingAndAppendTodo(newTodo);
     userInputElement.value = "";
@@ -139,6 +175,8 @@ function onAddTodo(){
 addTodoButton.onclick = function() {
     onAddTodo();
 }
+
+
 
 /*
 //method 1:
